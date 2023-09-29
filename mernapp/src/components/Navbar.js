@@ -77,7 +77,10 @@ export default function Navbar(props) {
                 <Link className="btn bg-white text-success mx-1 " to="/login">
                   Login
                 </Link>
-                <Link className="btn bg-white text-danger mx-1" to="/signup">
+                <Link
+                  className="btn bg-white text-danger mx-1"
+                  to="/createUser"
+                >
                   Signup
                 </Link>
               </form>

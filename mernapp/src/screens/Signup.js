@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
   const [credentials, setCredentials] = useState({
@@ -9,6 +10,7 @@ const Signup = () => {
     password: '',
     geolocation: '',
   })
+  let navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault()
     const response = await fetch('http://localhost:5000/api/createuser', {
@@ -35,6 +37,8 @@ const Signup = () => {
     console.log(json)
     if (!json.success) {
       alert('Enter Valid Credentials')
+    } else {
+      navigate('/login')
     }
   }
   const onChange = (event) => {
